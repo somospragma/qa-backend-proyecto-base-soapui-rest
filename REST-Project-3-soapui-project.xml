@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4a57d77e-2bf5-445d-b15b-0103fe2f5135" activeEnvironment="Default" name="REST Project 3" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" projectVersion="" updated="3.45.0 2023-04-03T14:41:27Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="true"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="&lt;all>"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="true"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value="C:\Users\andres.vergara\Documents\Ejecucion de runners"/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting>
+  </con:settings>
+  <con:interface xsi:type="con:RestService" id="b0960420-fc34-4963-8312-463f0a47f134" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://reqres.in" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints>
+      <con:endpoint>https://reqres.in</con:endpoint>
+      <con:endpoint>https://reqres.in/api/users</con:endpoint>
+    </con:endpoints>
+    <con:resource name="" path="/" id="92b53e44-ad13-4eda-b14f-3bf14704faf5">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="1" id="6670f7ff-8f61-4157-942b-0dcab0d57c82" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element xmlns:user="https://reqres.in/api/users/">user:Response</con:element>
+        </con:representation>
+        <con:request name="Request 1" id="0df8a8f7-1f45-401d-9a3f-41b41b16372b" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>https://reqres.in</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="53ba2e08-c6b0-4e26-b4b7-0680986cadc8" name="TestSuite 1">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="d5c7f4b1-67e2-49af-be19-aa5123ea4d14" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Caso de prueba obtener usuarios" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="httprequest" name="Get usuario" id="78b66535-98b9-455a-9996-232b42f61290">
+        <con:settings/>
+        <con:config method="GET" xsi:type="con:HttpRequest" id="8a2740d8-9253-4ae0-97eb-62431869a800" name="Get usuario" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://reqres.in/api/users/2</con:endpoint>
+          <con:request/>
+          <con:assertion type="Valid HTTP Status Codes" id="1e8519b7-1c6d-478a-ada3-9c9fcaa9e3b1" name="Valid HTTP Status Codes">
+            <con:settings/>
+            <con:configuration>
+              <codes>200</codes>
+            </con:configuration>
+          </con:assertion>
+          <con:assertion type="Invalid HTTP Status Codes" id="316604c2-5e7c-4a11-90e0-3181e10434ed" name="Invalid HTTP Status Codes">
+            <con:configuration>
+              <codes>201,400,500</codes>
+            </con:configuration>
+          </con:assertion>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="delay" name="Delay" id="3d4fe822-5005-4478-8d8a-30a476fa7cd1">
+        <con:settings/>
+        <con:config>
+          <delay>1000</delay>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="httprequest" name="Get usuarios" id="1e0cfe7a-3ec5-404d-bf43-bfb067b4665b">
+        <con:settings/>
+        <con:config method="GET" xsi:type="con:HttpRequest" id="9a5b77b5-280d-4986-a86d-8a612686e2fa" name="Get usuarios" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://reqres.in/api/users?page=2</con:endpoint>
+          <con:request/>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="d18d9274-3ef4-4c67-8193-db0a7c6f78c4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Caso de prueba PUT exitoso" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="httprequest" name="HTTP Request" id="f7a52e6d-29f4-42f1-a6c6-0fb5641e0916">
+        <con:settings/>
+        <con:config method="PUT" xsi:type="con:HttpRequest" id="0869e115-ec67-4df7-901e-0d3bef9ab5ac" name="HTTP Request" postQueryString="false" mediaType="application/json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://reqres.in/api/users/2</con:endpoint>
+          <con:request>{
+    "name": "morpheus",
+    "job": "zion resident",
+    "updatedAt": "2023-05-03T15:36:47.029Z"
+}</con:request>
+          <con:assertion type="Valid HTTP Status Codes" id="e8eebd0e-18d5-422a-a4a0-cbe007851a01" name="Valid HTTP Status Codes">
+            <con:settings/>
+            <con:configuration>
+              <codes>200</codes>
+            </con:configuration>
+          </con:assertion>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:testCase id="0d855794-16f3-4e6c-bf1f-2d1b0b68bb8c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Caso de prueba POST exitoso" searchProperties="true">
+      <con:settings/>
+      <con:testStep type="httprequest" name="HTTP Request" id="c95c6d93-e759-43b2-aa07-b4c50dc9756b">
+        <con:settings/>
+        <con:config method="POST" xsi:type="con:HttpRequest" id="8cf37211-24b5-4bd0-b79e-a624447fbf9e" name="HTTP Request" postQueryString="false" mediaType="application/json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://reqres.in/api/users</con:endpoint>
+          <con:request>{
+    "name": "morpheus",
+    "job": "leader"
+}</con:request>
+          <con:assertion type="Valid HTTP Status Codes" id="faace2f6-4a70-4d47-8a82-a88a196e2ab5" name="Valid HTTP Status Codes">
+            <con:settings/>
+            <con:configuration>
+              <codes>201</codes>
+            </con:configuration>
+          </con:assertion>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+          <con:jmsPropertyConfig/>
+          <con:parameters/>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:xmlTemplates/>
+    <con:parameters/>
+  </con:reporting>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
