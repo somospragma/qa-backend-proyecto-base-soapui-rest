@@ -1,5 +1,5 @@
 # proyecto-base-soap
-
+Proyecto usando la herramienta SOAPUI (Simil a Postman) donde realizamos pruebas a servicios SOAP (XML)
 
 
 ## Getting started
